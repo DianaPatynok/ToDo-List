@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-dark:#202142;
+  --primary-pink:#ee4878;
+  --white:#fff;
+  --black:#000000;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  background-color: var(--primary-dark);
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--black);
+}
+.container {
+  max-width: 550px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  background: var(--white);
+}
+.todo-app{
+  width: 100%;
+}
+.todo-icon{
+  width: 30px;    
+  height: 30px;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body.no-scroll {
+  overflow: hidden;
+}
