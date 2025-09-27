@@ -35,19 +35,77 @@ h5,
 h6 {
   color: var(--black);
 }
-.container {
-  max-width: 550px;
-  margin-inline: auto;
-  padding-inline: 24px;
+.container{
   background: var(--white);
-}
-.todo-app{
   width: 100%;
+  max-width: 540px;
+  min-height: 50vh;
+  border-radius: 10px;
+}
+
+#todo-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 .todo-icon{
-  width: 30px;    
   height: 30px;
+  width: 30px;
 }
+.input-group{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 30px;
+  margin-bottom: 25px;
+  padding:0 20px;
+}
+.add-btn{
+  margin-right: 20px;
+}
+#input-box{
+  flex: 1;
+  border:none;
+  border-radius: 20px;
+  outline: none;
+  background: var(--primary-pink);
+  padding: 10px;
+  padding-left: 20px;
+  margin-right: 10px;
+}
+::placeholder{
+  color: var(--white);
+}
+.add-btn{
+  position: absolute;
+  right: 10px;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius:20px;
+  background-color: var(--primary-dark);
+  color: var(--white);
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 0;
+  
+}
+#list-container{
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 35px;
+  user-select: none;
+  cursor: pointer;
+}
+#list-container li{
+  margin-bottom: 10px;
+}
+
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
