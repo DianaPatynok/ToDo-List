@@ -100,10 +100,48 @@ h6 {
   padding: 12px 8px 12px 35px;
   user-select: none;
   cursor: pointer;
+  position: relative;
+  margin-left: 20px;
+
 }
 #list-container li{
   margin-bottom: 10px;
 }
+#list-container li::before {
+  content: "";
+  position: absolute;
+  background-image: url(img/unchecked.png);
+  background-size: cover;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-position: center;
+  left: 1px;
+}
+#list-container li.checked{
+  color: #555;
+  text-decoration: line-through;
+}
+#list-container li.checked::before{
+  background-image: url(img/checked.png);
+}
+#list-container span{
+  position:absolute ;
+  right: 0;
+  top: 5px;
+  width:35px;
+  height: 35px;
+  font-size: 25px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+#list-container span:hover{
+  background-color:var(--primary-pink) ;
+  
+}
+
 
 
 @keyframes fadeInUp {
