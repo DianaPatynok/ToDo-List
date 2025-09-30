@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <div class="container fade-in-up">
       <div id="todo-header">
         <h2>ToDo List </h2>
         <img src="img/todo-icon.png" alt="ToDo-icon" class="todo-icon">
@@ -16,10 +16,10 @@
         <input type="text" id="input-box" placeholder="Add your text">
         <button onclick="addTask()" class="add-btn">Add</button>
       </div>
+      <div class="sort-wrapper">
+        <button class="sort-btn">Sort</button>
+      </div> 
       <ul id="list-container">
-       <!--<li class="checked">Task 1</li>
-        <li>Task 2</li>
-        <li>Task 3</li>--> 
       </ul>
     </div>
   <script src="script.js"></script>

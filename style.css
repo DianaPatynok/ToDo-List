@@ -8,10 +8,10 @@
   box-sizing: border-box;
 }
 :root {
-  --primary-dark:#202142;
-  --primary-pink:#ee4878;
-  --white:#fff;
-  --black:#000000;
+  --primary-dark: #202142;
+  --primary-pink: #ee4878;
+  --white: #fff;
+  --black: #000000;
 }
 body {
   font-family: 'Montserrat', sans-serif;
@@ -19,93 +19,104 @@ body {
   padding: 15px;
   align-items: center;
   justify-content: center;
-  min-height: 100dvh;
+  min-height: 100vh;
   background-color: var(--primary-dark);
+}
+body.no-scroll {
+  overflow: hidden;
 }
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   color: var(--black);
 }
-.container{
+.container {
   background: var(--white);
   width: 100%;
   max-width: 540px;
   min-height: 50vh;
   border-radius: 10px;
 }
-
-#todo-header{
+#todo-header {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin: 20px 0 20px 0;
 }
-.todo-icon{
+.todo-icon {
   height: 30px;
   width: 30px;
 }
-.input-group{
+.input-group {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 30px;
   margin-bottom: 25px;
-  padding:0 20px;
+  padding: 0 20px;
 }
-.add-btn{
-  margin-right: 20px;
-}
-#input-box{
+#input-box {
   flex: 1;
-  border:none;
+  border: none;
   border-radius: 20px;
   outline: none;
   background: var(--primary-pink);
-  padding: 10px;
-  padding-left: 20px;
+  padding: 10px 20px;
   margin-right: 10px;
-}
-::placeholder{
   color: var(--white);
 }
-.add-btn{
-  position: absolute;
-  right: 10px;
+::placeholder {
+  color: var(--white);
+}
+.add-btn {
   padding: 10px 20px;
   border: none;
   outline: none;
-  border-radius:20px;
+  border-radius: 20px;
   background-color: var(--primary-dark);
   color: var(--white);
   font-size: 16px;
   cursor: pointer;
-  margin-right: 0;
-  
 }
-#list-container{
+.sort-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+  margin-bottom: 4px;
+  padding-right: 20px;
+  margin-top: -13px;
+}
+.sort-btn {
+  font-size: 16px;
+  padding: 6px 18px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background-color: var(--primary-pink);
+  color: var(--white);
+  cursor: pointer;
+}
+#list-container {
   list-style: none;
   font-size: 17px;
-  padding: 12px 8px 12px 35px;
+  padding: 12px 8px 12px 28px;
   user-select: none;
   cursor: pointer;
   position: relative;
-  margin-left: 20px;
-
+  margin-top: 3px;
 }
-#list-container li{
+#list-container li {
   margin-bottom: 10px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 40px;
+  border-radius: 5px;
 }
 #list-container li::before {
   content: "";
@@ -116,33 +127,36 @@ h6 {
   width: 28px;
   border-radius: 50%;
   background-position: center;
-  left: 1px;
+  left: -7px;
 }
-#list-container li.checked{
+#list-container li.checked {
   color: #555;
   text-decoration: line-through;
 }
-#list-container li.checked::before{
+#list-container li.checked::before {
   background-image: url(img/checked.png);
 }
-#list-container span{
-  position:absolute ;
-  right: 0;
-  top: 5px;
-  width:35px;
-  height: 35px;
+#list-container span {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
   font-size: 25px;
   color: #555;
-  line-height: 40px;
   text-align: center;
+  line-height: 25px;
   border-radius: 50%;
+  cursor: pointer;
 }
-#list-container span:hover{
-  background-color:var(--primary-pink) ;
-  
+#list-container span:hover {
+  background-color: var(--primary-pink);
 }
 
-
+.fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
 
 @keyframes fadeInUp {
   from {
@@ -154,6 +168,25 @@ h6 {
     transform: translateY(0);
   }
 }
-body.no-scroll {
-  overflow: hidden;
+
+@media (max-width: 480px) {
+  .sort-wrapper {
+    padding: 0 7px; 
+    justify-content: flex-end;
+  }
+  .sort-wrapper .sort-btn {
+    margin-right: 0;
+    padding: 6px 16px;
+  }
+ .input-group .add-btn {
+    margin-right: 0; 
+    padding: 10px 16px; 
+  }
+
+  .input-group {
+    padding: 0 10px; 
+  }
+  #list-container span {
+    right: 17px;
+  }
 }
